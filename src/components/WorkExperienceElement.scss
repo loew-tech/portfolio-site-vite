@@ -1,0 +1,75 @@
+.work-experience-element {
+  position: relative;
+  padding: 0 0 1.75rem;
+  border-bottom: 1px solid #e5e7eb;
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  &__company {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111827;
+  }
+
+  &__dates {
+    flex: 0 0 auto;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #6b7280;
+    white-space: nowrap;
+  }
+
+  &__title {
+    margin: 0 0 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #4b5563;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #374151;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::marker {
+      color: #9ca3af;
+    }
+  }
+
+  @media (max-width: 640px) {
+    &__header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    &__dates {
+      font-size: 0.8rem;
+    }
+  }
+}
