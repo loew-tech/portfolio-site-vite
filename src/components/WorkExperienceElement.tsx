@@ -1,20 +1,20 @@
-import Markdown from "react-markdown";
+import { CalendarDays } from "lucide-react";
+
+import MarkdownContent from "./MarkdownContent";
 
 import "./WorkExperienceElement.scss";
-import { Calendar } from "lucide-react";
 
 interface WorkExperienceElementProps {
   company: string;
   title: string;
-  bullets: string[];
   dates: string;
+  bullets: string[];
 }
-
 const WorkExperienceElement = ({
   company,
   title,
-  bullets,
   dates,
+  bullets,
 }: WorkExperienceElementProps) => {
   return (
     <article className="work-experience-element">
@@ -22,17 +22,16 @@ const WorkExperienceElement = ({
         <h3 className="work-experience-element__company">{company}</h3>
 
         <span className="work-experience-element__dates">
-          <Calendar size={14} />
+          <CalendarDays size={14} />
           {dates}
         </span>
       </header>
 
       <h4 className="work-experience-element__title">{title}</h4>
-
       <ul>
         {bullets.map((bullet, i) => (
           <li key={`${title}-${i}`}>
-            <Markdown>{bullet}</Markdown>
+            <MarkdownContent content={bullet} />
           </li>
         ))}
       </ul>
