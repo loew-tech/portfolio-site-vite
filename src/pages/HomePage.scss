@@ -1,33 +1,42 @@
-.home-page {
-  width: min(100% - 2rem, 60rem);
-  margin: 0 auto;
-  padding: 4rem 0;
+.education-element {
+  &__degrees {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
 
-  &__header {
-    margin-bottom: 4rem;
-    text-align: center;
-
-    h1 {
+    h3 {
       margin: 0;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 700;
-      line-height: 1.1;
-    }
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
 
-    p {
-      margin: 0.75rem 0 0;
-      color: #6b7280;
-      font-size: 1.2rem;
+      &:not(:last-child)::after {
+        content: ",";
+      }
     }
   }
-}
 
-@media (max-width: 640px) {
-  .home-page {
-    padding: 2.5rem 0;
+  p {
+    margin: 0.25rem 0 0;
+    color: #4b5563;
+  }
 
-    &__header {
-      margin-bottom: 3rem;
+  span {
+    display: block;
+    margin-top: 0.15rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 640px) {
+    &__degrees {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15rem;
+
+      h3:not(:last-child)::after {
+        content: "";
+      }
     }
   }
 }

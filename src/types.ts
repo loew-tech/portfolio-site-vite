@@ -7,8 +7,9 @@ export interface Experience {
 
 export interface Education {
   institution: string;
-  degree: string;
+  degrees: string[];
   dates: string;
+  gpa: number | string;
   location?: string;
 }
 

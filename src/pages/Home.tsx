@@ -11,8 +11,8 @@ const HomePage = () => {
   return (
     <main className="home-page">
       <header className="home-page__header">
-        <h1>Steve ML</h1>
-        <p>Software Developer</p>
+        <h1>Stephen Marek-Loew</h1>
+        <p>Full Stack Software Developer</p>
       </header>
 
       <ResumeSection title="About Me" icon={<User />}>
@@ -30,8 +30,13 @@ const HomePage = () => {
 
       <ResumeSection title="Education" icon={<GraduationCap />}>
         {education.map((item) => (
-          <article key={`${item.institution}-${item.degree}`}>
-            <h3>{item.degree}</h3>
+          <article key={`${item.institution}-${item.degrees[0]}`}>
+            <div className="education-element__degrees">
+              {item.degrees.map((degree) => (
+                <h3 key={degree}>{degree}</h3>
+              ))}
+            </div>
+
             <p>{item.institution}</p>
             <span>{item.dates}</span>
           </article>
